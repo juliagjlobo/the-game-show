@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class moveCycle : MonoBehaviour
 {
-    public Vector2 direction = Vector2.right;
-    public float speed = 1f;
-    public int size = 1;
+    public Vector2 direction = Vector2.right; //movement direction
+    public float speed = 1f; //movement speed
+    public int size = 1; //obstacle's vertical size
 
     private Vector3 leftEdge;
     private Vector3 rightEdge;

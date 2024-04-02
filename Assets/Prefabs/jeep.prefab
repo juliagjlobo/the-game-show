@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1328093337710924558}
   - component: {fileID: 438887118756946128}
   - component: {fileID: 4188610228567691366}
+  - component: {fileID: 848657418879293685}
   m_Layer: 0
   m_Name: jeep
   m_TagString: Untagged
@@ -111,3 +112,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &848657418879293685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5214349271850940118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ea8bc7f770d0044908c88a044ada86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: -1, y: 0}
+  speed: 1
+  size: 1

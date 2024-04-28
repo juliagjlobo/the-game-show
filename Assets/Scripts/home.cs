@@ -23,10 +23,14 @@ public class home : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        enabled = true;
+
+        if (other.tag == "PlayerOne")
         {
-            enabled = true;
-            FindObjectOfType<gameManager>().HomeOccupied();
+            FindObjectOfType<gameManager>().HomeOccupiedOne();
+        } else
+        {
+            FindObjectOfType<gameManager>().HomeOccupiedTwo();
         }
     }
 }

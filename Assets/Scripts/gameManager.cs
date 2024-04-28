@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class gameManager : MonoBehaviour
 {
-    private frogger frogger;
+    private player1 player1;
+    private player2 player2;
     private home[] homes;
     private int score;
     private int lives;
@@ -16,7 +17,8 @@ public class gameManager : MonoBehaviour
     private void Awake()
     {
         homes = FindObjectsOfType<home>();
-        frogger = FindObjectOfType<frogger>();
+        player1 = FindObjectOfType<player1>();
+        player2 = FindObjectOfType<player2>();
     }
 
     private void NewLevel ()
@@ -28,20 +30,45 @@ public class gameManager : MonoBehaviour
         NewRound();
     }
 
-    private void NewRound ()
+    private void NewRound()
     {
-        frogger.Respawn();
+        player1.Respawn();
+        player2.Respawn();
     }
 
-    public void HomeOccupied()
+    private void NewRoundOne ()
     {
-        frogger.gameObject.SetActive(false);
+        player1.Respawn();
+    }
+
+    private void NewRoundTwo()
+    {
+        player2.Respawn();
+    }
+
+    public void HomeOccupiedOne()
+    {
+        player1.gameObject.SetActive(false);
 
         if (Cleared())
         {
             Invoke(nameof(NewLevel), 1f);
         } else {
-            Invoke(nameof(NewRound), 1f);
+            Invoke(nameof(NewRoundOne), 1f);
+        }
+    }
+
+    public void HomeOccupiedTwo()
+    {
+        player2.gameObject.SetActive(false);
+
+        if (Cleared())
+        {
+            Invoke(nameof(NewLevel), 1f);
+        }
+        else
+        {
+            Invoke(nameof(NewRoundTwo), 1f);
         }
     }
 

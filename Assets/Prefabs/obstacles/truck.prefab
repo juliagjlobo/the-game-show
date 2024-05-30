@@ -126,4 +126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 1, y: 0}
   speed: 1
+  speedH: 2
   size: 1
+  enabledStart: 1
+  activeGameObject: {fileID: 6369323021535198138}
+  progress: 5

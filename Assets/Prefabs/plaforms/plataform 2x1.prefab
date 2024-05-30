@@ -49,6 +49,9 @@ MonoBehaviour:
   direction: {x: -1, y: 0}
   speed: 1
   size: 2
+  enabledStart: 1
+  activeGameObject: {fileID: 7802373219541587073}
+  progress: 5
 --- !u!1001 &8490423141845869775
 PrefabInstance:
   m_ObjectHideFlags: 0

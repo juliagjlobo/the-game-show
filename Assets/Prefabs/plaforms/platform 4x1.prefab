@@ -327,6 +327,9 @@ MonoBehaviour:
   direction: {x: 1, y: 0}
   speed: 2
   size: 4
+  enabledStart: 1
+  activeGameObject: {fileID: 5107440596894201200}
+  progress: 5
 --- !u!1 &5710015658772185695
 GameObject:
   m_ObjectHideFlags: 0

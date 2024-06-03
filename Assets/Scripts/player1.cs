@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class player1 : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-    public Sprite idleSprite;
-    public Sprite leapSprite;
-    public Sprite deadSprite;
     private bool cooldown;
     private Vector3 spawnPosition;
+    public Animator animator;
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         spawnPosition = transform.position;
 
     }
@@ -23,21 +19,25 @@ public class player1 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            animator.Play("Pback", -1, 0f);
             Move(Vector3.up);
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            animator.Play("Pfront", -1, 0f);
             Move(Vector3.down);
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
-            transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            animator.Play("Pside", -1, 0f);
             Move(Vector3.left);
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            animator.Play("Pside", -1, 0f);
             Move(Vector3.right);
         }
     }
@@ -85,13 +85,11 @@ public class player1 : MonoBehaviour
     private IEnumerator Leap(Vector3 destination)
     {
         cooldown = true;
-
         Vector3 startPosition = transform.position;
 
         float elapsed = 0f;
         float duration = 0.125f; //velocidade do pulo
 
-        spriteRenderer.sprite = leapSprite;
 
         while (elapsed < duration)
         {
@@ -102,7 +100,6 @@ public class player1 : MonoBehaviour
         }
 
         transform.position = destination;
-        spriteRenderer.sprite = idleSprite;
         cooldown = false;
     }
 
@@ -110,7 +107,6 @@ public class player1 : MonoBehaviour
     {
         StopAllCoroutines();
         transform.rotation = Quaternion.identity;
-        spriteRenderer.sprite = deadSprite;
         enabled = false;
 
         Invoke(nameof(Respawn), 1f);
@@ -122,7 +118,6 @@ public class player1 : MonoBehaviour
 
         transform.rotation = Quaternion.identity;
         transform.position = spawnPosition;
-        spriteRenderer.sprite = idleSprite;
         gameObject.SetActive(true);
         enabled = true;
         cooldown = false;

@@ -41,7 +41,7 @@ public class gameManager : MonoBehaviour
         difficulty = 0;
         scoreP1 = 0;
         scoreP2 = 0;
-        fase1.Play();
+        //fase1.Play();
     }
     private void NewLevel ()
     {
@@ -108,14 +108,14 @@ public class gameManager : MonoBehaviour
                 difficulty++;
                 if (difficulty == 1)
                 {
-                    fase1.Stop();
-                    fase2.Play();
+                    //fase1.Stop();
+                    //fase2.Play();
                     obstacle1.SetActive(true);
                     obstacle2.SetActive(true);
                 } else if (difficulty == 2)
                 {
                    fase2.Stop();
-                    AudioSource.Play(fase3);
+                    //AudioSource.Play(fase3);
                     platform1.SetActive(false);
                     platform2.SetActive(false);
                     platform3.SetActive(false);
@@ -124,16 +124,16 @@ public class gameManager : MonoBehaviour
                     platform6.SetActive(false);
                 } else if (difficulty == 3)
                 {
-                    AudioSource.Stop();
-                    AudioSource.PlayClipAtPoint(fase4, transform.position);
+                    //AudioSource.Stop();
+                    //AudioSource.PlayClipAtPoint(fase4, transform.position);
                     obstacle3.SetActive(true);
                     obstacle4.SetActive(true);
                     obstacle5.SetActive(true);
                 }
                 else if (difficulty == 4)
                 {
-                    AudioSource.Stop();
-                    AudioSource.PlayClipAtPoint(fase5, transform.position);
+                    //AudioSource.Stop();
+                    //AudioSource.PlayClipAtPoint(fase5, transform.position);
                 }
                 return false;
             }

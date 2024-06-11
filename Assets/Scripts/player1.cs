@@ -7,6 +7,7 @@ public class player1 : MonoBehaviour
     private bool cooldown;
     private Vector3 spawnPosition;
     public Animator animator;
+    public AudioClip deathSound;
 
     private void Awake()
     {
@@ -19,25 +20,25 @@ public class player1 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-            animator.Play("Pback", -1, 0f);
+            animator.Play("PB", -1, 0f);
             Move(Vector3.up);
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-            animator.Play("Pfront", -1, 0f);
+            animator.Play("P1", -1, 0f);
             Move(Vector3.down);
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
             transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-            animator.Play("Pside", -1, 0f);
+            animator.Play("P2", -1, 0f);
             Move(Vector3.left);
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-            animator.Play("Pside", -1, 0f);
+            animator.Play("P2", -1, 0f);
             Move(Vector3.right);
         }
     }
@@ -105,6 +106,9 @@ public class player1 : MonoBehaviour
 
     private void Death()
     {
+        AudioSource.PlayClipAtPoint(deathSound, transform.position);
+        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        animator.Play("Pmorte", -1, 0f);
         StopAllCoroutines();
         transform.rotation = Quaternion.identity;
         enabled = false;
@@ -121,6 +125,7 @@ public class player1 : MonoBehaviour
         gameObject.SetActive(true);
         enabled = true;
         cooldown = false;
+        animator.Play("PD", -1, 0f);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

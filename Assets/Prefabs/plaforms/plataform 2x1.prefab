@@ -72,9 +72,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 5ab8eded1724e77408ea0562a2770e13, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9058824, g: 0.7803922, b: 0.83921576, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -133,11 +133,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: -1, y: 0}
   speed: 1
-  speedH: 1
   size: 2
   enabledStart: 1
   activeGameObject: {fileID: 7802373219541587073}
-  progress: 5
+  progress: 3
 --- !u!1001 &8490423141845869775
 PrefabInstance:
   m_ObjectHideFlags: 0

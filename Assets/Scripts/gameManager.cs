@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
@@ -6,16 +7,26 @@ public class gameManager : MonoBehaviour
     private player2 player2;
     private home[] homes;
     public int difficulty;
-    public GameObject barrel1;
-    public GameObject barrel2;
+    public GameObject obstacle1;
+    public GameObject obstacle2;
+    public GameObject obstacle3;
+    public GameObject obstacle4;
+    public GameObject obstacle5;
     public GameObject platform1;
     public GameObject platform2;
     public GameObject platform3;
     public GameObject platform4;
     public GameObject platform5;
     public GameObject platform6;
-    public GameObject tomato;
-    private int score;
+    public GameObject fade;
+    public int scoreP1;
+    public int scoreP2;
+    public AudioSource fase1;
+    public AudioSource fase2;
+    public AudioSource fase3;
+    public AudioSource fase4;
+    public AudioSource fase5;
+
 
     private void NewGame ()
     {
@@ -28,15 +39,19 @@ public class gameManager : MonoBehaviour
         player1 = FindObjectOfType<player1>();
         player2 = FindObjectOfType<player2>();
         difficulty = 0;
+        scoreP1 = 0;
+        scoreP2 = 0;
+        fase1.Play();
     }
     private void NewLevel ()
     {
-        difficulty = 0;
-        for (int i = 0; i < homes.Length; i++)
+        if (scoreP1 > scoreP2)
         {
-            homes[i].enabled = false;
+            SceneManager.LoadScene("P1Win", LoadSceneMode.Single);
+        } else
+        {
+            SceneManager.LoadScene("P2Win", LoadSceneMode.Single);
         }
-        NewRound();
     }
 
     private void NewRound()
@@ -58,11 +73,13 @@ public class gameManager : MonoBehaviour
     public void HomeOccupiedOne()
     {
         player1.gameObject.SetActive(false);
-        score = score - 1;
-        if (Cleared())
+        scoreP1 = scoreP1 + 1;
+        if (Cleared() || scoreP1 == 3)
         {
-            Invoke(nameof(NewLevel), 1f);
-        } else {
+            fade.SetActive(true);
+            Invoke(nameof(NewLevel), 3f);
+        } else
+        {
             Invoke(nameof(NewRoundOne), 1f);
         }
     }
@@ -70,9 +87,10 @@ public class gameManager : MonoBehaviour
     public void HomeOccupiedTwo()
     {
         player2.gameObject.SetActive(false);
-        score = score + 1;
-        if (Cleared())
+        scoreP2 = scoreP2 + 1;
+        if (Cleared() || scoreP2 == 3)
         {
+            fade.SetActive(true);
             Invoke(nameof(NewLevel), 1f);
         }
         else
@@ -90,10 +108,14 @@ public class gameManager : MonoBehaviour
                 difficulty++;
                 if (difficulty == 1)
                 {
-                    barrel1.SetActive(true);
-                    barrel2.SetActive(true);
+                    fase1.Stop();
+                    fase2.Play();
+                    obstacle1.SetActive(true);
+                    obstacle2.SetActive(true);
                 } else if (difficulty == 2)
                 {
+                   fase2.Stop();
+                    AudioSource.Play(fase3);
                     platform1.SetActive(false);
                     platform2.SetActive(false);
                     platform3.SetActive(false);
@@ -102,7 +124,16 @@ public class gameManager : MonoBehaviour
                     platform6.SetActive(false);
                 } else if (difficulty == 3)
                 {
-                    tomato.SetActive(true);
+                    AudioSource.Stop();
+                    AudioSource.PlayClipAtPoint(fase4, transform.position);
+                    obstacle3.SetActive(true);
+                    obstacle4.SetActive(true);
+                    obstacle5.SetActive(true);
+                }
+                else if (difficulty == 4)
+                {
+                    AudioSource.Stop();
+                    AudioSource.PlayClipAtPoint(fase5, transform.position);
                 }
                 return false;
             }

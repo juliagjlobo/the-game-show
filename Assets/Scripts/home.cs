@@ -20,7 +20,6 @@ public class home : MonoBehaviour
 
     private void OnDisable()
     {
-        AudioSource.PlayClipAtPoint(flagSound, transform.position);
         frog.SetActive(false);
         boxCollider.enabled = true;
         flag.GetComponent<Renderer>().material.color = Color.white;
@@ -29,6 +28,7 @@ public class home : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         enabled = true;
+        AudioSource.PlayClipAtPoint(flagSound, transform.position);
 
         if (other.tag == "PlayerOne")
         {

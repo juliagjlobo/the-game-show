@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class moveCycle : MonoBehaviour
@@ -9,6 +8,8 @@ public class moveCycle : MonoBehaviour
     public bool enabledStart;
     public GameObject activeGameObject;
     public int progress = 5;
+    private gameManager script;
+    public float speedI;
 
     private Vector3 leftEdge;
     private Vector3 rightEdge;
@@ -18,10 +19,16 @@ public class moveCycle : MonoBehaviour
         leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
         rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
         activeGameObject.SetActive(enabledStart);
+        script = FindObjectOfType<gameManager>();
+        speedI = speed;
     }
 
     private void Update()
     {
+        if (script.difficulty == 4)
+        {
+            speed = speedI + 2f;
+        }
         if (direction.x > 0 && (transform.position.x - size) > rightEdge.x)
         {
             Vector3 position = transform.position;

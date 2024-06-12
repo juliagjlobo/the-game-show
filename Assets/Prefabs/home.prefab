@@ -338,3 +338,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frog: {fileID: 791130300989441471}
   flag: {fileID: 6101222275687856860}
+  flagSound: {fileID: 8300000, guid: 0ac329d8fda331043a2308f1a38f0363, type: 3}

@@ -8,6 +8,7 @@ public class player1 : MonoBehaviour
     private Vector3 spawnPosition;
     public Animator animator;
     public AudioClip deathSound;
+    public AudioClip waterSound;
 
     private void Awake()
     {
@@ -55,6 +56,7 @@ public class player1 : MonoBehaviour
         Collider2D barrier = Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("barrier"));
         Collider2D platform = Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("platform"));
         Collider2D obstacle = Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("obstacle"));
+        Collider2D water = Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("water"));
 
         if (barrier != null) //checa se há colisão com barreira
         {
@@ -74,9 +76,11 @@ public class player1 : MonoBehaviour
         {
             transform.position = destination;
             Death();
-        }
-        else
-        {
+        } else if (water != null && platform == null) {
+            transform.position = destination;
+            AudioSource.PlayClipAtPoint(waterSound, transform.position);
+            Death();
+        } else {
             StartCoroutine(Leap(destination));
         }
 

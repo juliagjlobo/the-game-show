@@ -18,7 +18,9 @@ public class gameManager : MonoBehaviour
     public GameObject platform4;
     public GameObject platform5;
     public GameObject platform6;
-    public GameObject fade;
+    public GameObject fadeout;
+    public GameObject fadein;
+    public GameObject locutor;
     public int scoreP1;
     public int scoreP2;
     public AudioSource fase1;
@@ -41,6 +43,12 @@ public class gameManager : MonoBehaviour
         difficulty = 0;
         scoreP1 = 0;
         scoreP2 = 0;
+        Invoke(nameof(Initialize), 10f);
+    }
+    private void Initialize()
+    {
+        fadein.SetActive(false);
+        locutor.SetActive(false);
     }
     private void NewLevel ()
     {
@@ -75,7 +83,7 @@ public class gameManager : MonoBehaviour
         scoreP1 = scoreP1 + 1;
         if (Cleared() || scoreP1 == 3)
         {
-            fade.SetActive(true);
+            fadeout.SetActive(true);
             Invoke(nameof(NewLevel), 3f);
         } else
         {
@@ -89,8 +97,8 @@ public class gameManager : MonoBehaviour
         scoreP2 = scoreP2 + 1;
         if (Cleared() || scoreP2 == 3)
         {
-            fade.SetActive(true);
-            Invoke(nameof(NewLevel), 1f);
+            fadeout.SetActive(true);
+            Invoke(nameof(NewLevel), 3f);
         }
         else
         {

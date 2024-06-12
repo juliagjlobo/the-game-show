@@ -50,11 +50,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: -1, y: 0}
   speed: 3
-  speedH: 1
   size: 3
   enabledStart: 1
   activeGameObject: {fileID: 1810092340591690497}
   progress: 5
+  speedI: 0
 --- !u!1 &4376983213078750274
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 28d4e244ebf24e04ba9b0ac27ccc4a65, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d3eff1e0ff79c894aa37d1bbfd34198e, type: 3}
   m_Color: {r: 0.9056604, g: 0.7809185, b: 0.8381913, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -1105,7 +1105,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4006ac1a595df9b409d7db72a67fa002, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 02ac205c9f74ec1489ad33d318d038cd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
@@ -2287,10 +2287,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3731,8 +3731,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1120, y: -835}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -747.7043, y: -136.29572}
+  m_SizeDelta: {x: 104.3489, y: 104.3489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &857235679
 Animator:
@@ -4042,8 +4042,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -15}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0.000083923, y: -58}
+  m_SizeDelta: {x: 270.8543, y: 182.8569}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &909711712
 MonoBehaviour:
@@ -4114,7 +4114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4223,7 +4223,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9983271ff08b6f144bb8271b7d798808, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 60f9993e400eaf34b8d3561ecb15c683, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
@@ -4706,7 +4706,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9f3f10e02ce9ece4b8edc6f326bd1eec, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ac101fe783b10dd4b8ec891f1bf77f4c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
@@ -4834,7 +4834,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3716a531d71856343aae189407d69c37, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6ed06b6de9cc3c647ae7ff556625eea4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
@@ -5172,8 +5172,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -11}
-  m_SizeDelta: {x: 241.7522, y: 180.454}
+  m_AnchoredPosition: {x: 0, y: -15}
+  m_SizeDelta: {x: 660.2001, y: 437.9606}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1018562892
 MonoBehaviour:
@@ -5195,7 +5195,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1ab26c6be3730604994fc3b08ae455b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 922e148e641cfe7478c153b9df134a67, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5240,7 +5240,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 70650ccd5d1754d49b3f6efb9d6148a8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8b39d5aa5dcbf6f4cb00b4e69e7dd7c2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
@@ -7443,9 +7443,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 910, y: 474}
+  m_AnchoredPosition: {x: 472.89618, y: 187.62158}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: -3.8710382, y: -2.363784}
 --- !u!1001 &1530331863
 PrefabInstance:
   m_ObjectHideFlags: 0
